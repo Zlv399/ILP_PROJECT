@@ -90,6 +90,10 @@ class DeviceCategoryPage(BasePage):
         return update_devca_p
 
     def remove_devca(self):
+        """
+        删除仪器分类信息
+        :return:
+        """
         self.click(self.bt_remove_devca_locator)
         self.click(self.bt_remove_y_devca_locator)
         remove_devca_p = self.get_devca_p()
