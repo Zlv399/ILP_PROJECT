@@ -105,3 +105,6 @@ class DeviceCategoryPage(BasePage):
         return devca_p
 
 
+    def test_ded(self):
+        pass
+
