@@ -73,6 +73,10 @@ class DeviceCategoryPage(BasePage):
         return list_one_devcaname
 
     def restting_devca(self):
+        """
+        搜索重置
+        :return:
+        """
         self.click(self.bt_restting_devca_locator)
         return self
 
