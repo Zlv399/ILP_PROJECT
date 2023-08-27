@@ -108,3 +108,7 @@ class DeviceCategoryPage(BasePage):
     def test_ded(self):
         pass
 
+    def pass_a(self):
+        pass
+    
+
