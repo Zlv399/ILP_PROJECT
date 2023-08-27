@@ -54,7 +54,7 @@ class TestDeviceCategory:
         """
         仪器分类编辑
         :param login:fixture函数，返回driver对象
-        :param test_info:仪器分类基本信息编辑，字典1
+        :param test_info:仪器分类基本信息编辑，字典12
         :return:
         """
         devca = DeviceCategoryPage(login)
