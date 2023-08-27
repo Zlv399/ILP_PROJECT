@@ -79,7 +79,7 @@ class DeviceCategoryPage(BasePage):
     def update_devca(self,devca):
         """
         仪器分类基本信息编辑(编辑备注)
-        :param devca: 编辑修改仪器分类的内容1
+        :param devca: 编辑修改仪器分类的内容
         :return:
         """
         #self.driver.find_elements(*self.bt_update_devca_locator)[1].click()
