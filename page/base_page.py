@@ -119,6 +119,21 @@ class BasePage(object):
             self.save_screenshot()
         else:
             return e
+    def wati_element_invisibility(self,locator,timeout=7,poll_frequency=0.2):
+        """
+        等待元素不可见，等待失败截图
+        :param locator: 元素定位
+        :param timeout: 指定等待时间默认6s
+        :param poll_frequency: 指定轮询间隔时间，默认0.2s一次
+        :return:
+        """
+        wait = WebDriverWait(self.driver,timeout,poll_frequency)
+        try:
+            e = wait.until(EC.invisibility_of_element_located(locator))
+        except Exception as err:
+            self.save_screenshot()
+        else:
+            return e
 
     def wait_element_present(self,locator,timeout=20,poll_frequency=0.2):
         """

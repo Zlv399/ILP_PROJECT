@@ -112,4 +112,12 @@ class DeviceCategoryPage(BasePage):
         devca_p = self.wait_element_visible(self.p_devca_locator).text
         return devca_p
 
+    def wati_invisibility(self):
+        """
+        等待页面操作完成的提示弹窗不可见
+        :return:
+        """
+        self.wati_element_invisibility(self.p_devca_locator)
+        return self
+
 

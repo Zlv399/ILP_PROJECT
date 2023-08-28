@@ -64,3 +64,10 @@ class TestDeviceCategory:
         except Exception as err:
             raise err
 
+    def test_remove_devca(self,login):
+        devca = DeviceCategoryPage(login)
+        remove_devca = devca.remove_devca()
+        try:
+            assert remove_devca == '删除成功'
+        except Exception as err:
+            raise err
