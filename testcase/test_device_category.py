@@ -65,7 +65,14 @@ class TestDeviceCategory:
             raise err
 
     def test_remove_devca(self,login):
+        """
+        仪器分类删除
+        :param login:fixture函数，返回driver对象
+        :return:
+        """
         devca = DeviceCategoryPage(login)
+        # time.sleep(5)
+        # devca.wati_invisibility()
         remove_devca = devca.remove_devca()
         try:
             assert remove_devca == '删除成功'
