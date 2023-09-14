@@ -8,10 +8,14 @@
 """
 import os
 import pytest
+import time
+from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from data.login_data import cases_success
 from config.config import IMPLICTLY_WAIT_TIMEOUT,IMAGE_PATH
 from page.login_page import LoginPage
+
+
 
 @pytest.fixture(scope='class')
 def browser():
@@ -24,9 +28,16 @@ def browser():
     5、关闭浏览器
     :return:
     """
-    driver = webdriver.Chrome()
+    #解决ssl协议握手报错ERROR:ssl_client_socket_impl.cc(962)] handshake failed；returned -1, SSL error code 1
+    chrome_options = Options()
+    #
+    chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_experimental_option('excludeSwitches', ['ignore-certificate-errors'])
+    #将窗口最大化作为chrome的启动选项，即启动浏览器时就是最大化
+    chrome_options.add_argument('--start-maximized')
+    driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(IMPLICTLY_WAIT_TIMEOUT)
-    driver.maximize_window()
+    # driver.maximize_window()
     yield driver
     driver.quit()
 

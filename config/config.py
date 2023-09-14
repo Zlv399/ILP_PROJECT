@@ -8,10 +8,10 @@
 """
 
 import os
-from selenium.webdriver.common.by import By
+
 
 # 隐式等待时间
-IMPLICTLY_WAIT_TIMEOUT = 20
+IMPLICTLY_WAIT_TIMEOUT = 10
 
 # host
 TEST_HOST = "http://192.168.32.70:2888/"
@@ -28,5 +28,8 @@ IMAGE_PATH = os.path.join(REPORTS_PATH, "screeshots")
 # 用于文件上传功能的文件地址
 FILES_PATH = os.path.join(ROOT_PATH, "files")
 
-#模块父级菜单元素定位
-Device  = (By.XPATH,'//span[contains(text(),"仪器管理")]')
+#元素定位维护文件父目录
+ELEMENT_PATH = os.path.join(ROOT_PATH,'locators')
+
+#测试数据维护文件目录
+TESTDATA_PATH = os.path.join(ROOT_PATH,'data')

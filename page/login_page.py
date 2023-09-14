@@ -6,10 +6,14 @@
 @Author:fangyx
 @Date:2023/8/14 20:14
 """
+import time
+
 from config.config import TEST_HOST
 from page.base_page import BasePage
-from selenium.webdriver import Chrome
-from selenium.webdriver.common.by import By
+from locators.login_loc import LoginLocators as loc
+
+
+
 
 class LoginPage(BasePage):
     """
@@ -18,14 +22,7 @@ class LoginPage(BasePage):
     2、登录操作：定位用户名、输入账号，定位密码、输入密码，定位登录按钮、点击登录
     3、获取页面报错信息
     """
-    # i：输入框  bt：按钮  t：文本属性 p:弹窗提示 ier:输入框异常提示
     login_url = TEST_HOST + '#/login'
-    i_user_locator = (By.XPATH,'//input[@autocomplete="off"][@placeholder="请输入账号"]')
-    i_pwd_locator = (By.XPATH,'//input[@autocomplete="off"][@type="password"]')
-    bt_login_locator = (By.XPATH,'//button[@type="button"][@class="el-button login-submit el-button--primary el-button--small"]')
-    ier_user_locator = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[2]/div/div[2]')
-    ier_pwd_locator = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[3]/div/div[2]')
-    p_login_err_locator = (By.XPATH,'//p[@class="el-message__content"]')
 
     def get_login(self):
         """
@@ -43,17 +40,17 @@ class LoginPage(BasePage):
         :param pwd: 密码
         :return:
         """
-        # self.move_to_element(self.i_user_locator
-        self.send_value(self.i_user_locator,name)
-        self.send_value(self.i_pwd_locator,pwd)
-        self.click(self.bt_login_locator)
+        # self.move_to_element(self.i_user_locator)
+        self.send_value(loc.i_user_ele, name)
+        self.send_value(loc.i_pwd_ele,pwd)
+        self.click(loc.bt_login_ele)
 
     def get_input_user_error(self):
         """
         获取用户名输入框的报错信息
         :return:
         """
-        user_err = self.wait_element_visible(self.ier_user_locator).text
+        user_err = self.wait_element_visible(loc.ier_user_ele).text
         return user_err
         # if user_err.is_displayed():
         #     return user_err.text
@@ -68,7 +65,7 @@ class LoginPage(BasePage):
         :return:
         """
         # pwd_err = self.find(self.pwd_err_locator).text
-        pwd_err = self.wait_element_visible(self.ier_pwd_locator).text
+        pwd_err = self.wait_element_visible(loc.ier_pwd_ele).text
         return pwd_err
 
     def get_prompt_error(self):
@@ -76,5 +73,5 @@ class LoginPage(BasePage):
         获取页面弹窗提示的错误信息
         :return:
         """
-        pormpt_err = self.wait_element_visible(self.p_login_err_locator).text
+        pormpt_err = self.wait_element_visible(loc.p_login_err_ele).text
         return pormpt_err

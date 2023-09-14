@@ -1,0 +1,16 @@
+device_category:
+  - devca_name: 自动化测试分类$nowtime
+    sort: 0
+    expected: 操作成功!
+
+select_device_category:
+  - select_devca: 自动化测试分类
+
+remove_device_category:
+  - select_devca: 自动化测试分类
+    expected: 删除成功
+
+update_device_category:
+  - select_devca: 自动化测试分类
+    update_devca_text: UI自动化编辑仪器分类备注信息$nowtime
+    expected: 操作成功!

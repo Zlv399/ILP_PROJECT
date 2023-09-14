@@ -9,7 +9,6 @@
 
 import os
 import time
-
 from config.config import IMAGE_PATH
 from datetime import datetime
 from selenium.webdriver import Chrome
@@ -31,6 +30,7 @@ class BasePage(object):
         :return:
         """
         self.driver = driver
+
 
     def find(self,locator):
         """
@@ -56,6 +56,7 @@ class BasePage(object):
         else:
             return e
 
+
     def finds(self,locator):
         """
         查找多个元素方法，并将所有元素以列表返回
@@ -80,13 +81,13 @@ class BasePage(object):
         #         os.remove(file_path)
         # 路径拼接
         # 时间戳命名，防止覆盖
-        ts_str = datetime.now().strftime("%y-%m_%d-%H-%M-%S")
+        ts_str = time.strftime('%y%m%d-%H_%M_%S')
         file_name = os.path.join(IMAGE_PATH, ts_str) + '.png'
         self.driver.save_screenshot(file_name)
         # 将当前对象自身作为结果返回，使得该方法可以链式调用，即在调用完 save_screenshot()方法后继续调用其他方法，无需单独的变量引用。
         return self
 
-    def wait_element_clickable(self,locator,timeout=20,poll_frequency=0.2):
+    def wait_element_clickable(self,locator,timeout=10,poll_frequency=0.2):
         """
         等待元素可以被点击，等待失败截图
         :param locator: 元素定位
@@ -100,10 +101,11 @@ class BasePage(object):
         except Exception as err:
             #可以加上日志处理
             self.save_screenshot()
+            raise err
         else:
             return e
 
-    def wait_element_visible(self,locator,timeout=20,poll_frequency=0.2):
+    def wait_element_visible(self,locator,timeout=10,poll_frequency=0.2):
         """
         等待元素可见，等待失败截图
         :param locator: 元素定位
@@ -117,9 +119,10 @@ class BasePage(object):
         except Exception as err:
             #可以加上日志处理
             self.save_screenshot()
+            raise err
         else:
             return e
-    def wati_element_invisibility(self,locator,timeout=7,poll_frequency=0.2):
+    def wati_element_invisibility(self,locator,timeout=6,poll_frequency=0.2):
         """
         等待元素不可见，等待失败截图
         :param locator: 元素定位
@@ -132,10 +135,12 @@ class BasePage(object):
             e = wait.until(EC.invisibility_of_element_located(locator))
         except Exception as err:
             self.save_screenshot()
-        else:
-            return e
+            raise err
 
-    def wait_element_present(self,locator,timeout=20,poll_frequency=0.2):
+
+
+
+    def wait_element_present(self,locator,timeout=10,poll_frequency=0.2):
         """
         等待元素被加载，等待失败截图
         :param locator: 元素定位信息

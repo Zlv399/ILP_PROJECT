@@ -1,0 +1,31 @@
+账号输入框:
+    type: xpath
+    value: //input[@autocomplete="off"][@placeholder="请输入账号"]
+
+密码输入框:
+    type: xpath
+    value: //input[@autocomplete="off"][@type="password"]
+
+登录按钮:
+    type: xpath
+    value: //button[@type="button"][@class="el-button login-submit el-button--primary el-button--small"]
+
+账号为空错误提示信息:
+    type: xpath
+    value: /html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[2]/div/div[2]
+
+密码为空错误提示信息:
+    type: xpath
+    value: /html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[3]/div/div[2]
+
+阻断提示弹窗:
+    type: xpath
+    value: //p[@class="el-message__content"]
+
+
+
+
+
+
+
+

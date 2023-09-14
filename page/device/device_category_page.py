@@ -8,9 +8,8 @@
 """
 import time
 from page.base_page import BasePage
-from config.config import Device,TEST_HOST
 from selenium.webdriver.common.by import By
-
+from locators.device.device_category_loc import DeviceCategoryLocators as loc
 
 class DeviceCategoryPage(BasePage):
     """
@@ -28,7 +27,6 @@ class DeviceCategoryPage(BasePage):
     bt_select_devca_locator = (By.XPATH,'//span[contains(text(),"搜索")]')
     bt_restting_devca_locator = (By.XPATH,'//span[contains(text(),"重置")]')
     bt_update_devca_locator = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div[3]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td[6]/div/span[1]')
-    #//table/tbody/tr[1]/td[6]/div/span[1]
     t_text_devca_locator = (By.XPATH,'//textarea[@class="el-textarea__inner"]')
     bt_remove_devca_locator = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div[3]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td[6]/div/span[2]')
     bt_remove_y_devca_locator = (By.XPATH,'//span[contains(text(),"确定")]')
@@ -42,8 +40,8 @@ class DeviceCategoryPage(BasePage):
         """
         # self.find(Device).click()
         # self.find(self.devc_locator).click()
-        self.click(Device)
-        self.click(self.t_devca_locator)
+        self.click(loc.t_device_ele)
+        self.click(loc.t_devca_ele)
         return self
 
     def save_devicecategory(self,devca_name,devca_sort):
@@ -53,10 +51,10 @@ class DeviceCategoryPage(BasePage):
         :param devca_sort: 分类排序，必填项
         :return:
         """
-        self.find(self.bt_add_devca_locator).click()
-        self.send_value(self.i_devca_name_locator,devca_name)
-        self.send_value(self.i_devca_sort_locator,devca_sort)
-        self.click(self.bt_save_devca_locator)
+        self.click(loc.bt_add_devca_ele)
+        self.send_value(loc.i_devca_name_ele,devca_name)
+        self.send_value(loc.i_devca_sort_ele,devca_sort)
+        self.click(loc.bt_save_devca_ele)
         save_devc_p = self.get_devca_p()
         return save_devc_p
 
@@ -67,9 +65,9 @@ class DeviceCategoryPage(BasePage):
         :param devicecategory: 仪器分类名称
         :return:
         """
-        self.send_value(self.i_select_devcaname_locator,devcaname)
-        self.click(self.bt_select_devca_locator)
-        list_one_devcaname = self.find(self.t_listone_devcaname_locator).text
+        self.send_value(loc.i_select_devcaname_ele,devcaname)
+        self.click(loc.bt_select_devca_ele)
+        list_one_devcaname = self.find(loc.t_listone_devcaname_ele).text
         return list_one_devcaname
 
     def restting_devca(self):
@@ -77,30 +75,35 @@ class DeviceCategoryPage(BasePage):
         搜索重置
         :return:
         """
-        self.click(self.bt_restting_devca_locator)
+        self.click(loc.bt_restting_devca_ele)
         return self
 
-    def update_devca(self,devca):
+    def update_devca(self,devca_name,update_txt):
         """
-        仪器分类基本信息编辑(编辑备注)
-        :param devca: 编辑修改仪器分类的内容
+        指定仪器分类基本信息编辑(编辑备注)
+        :param devca_name: 仪器分类名称，查询条件，
+        :param update_txt: 编辑内容
         :return:
         """
-        #self.driver.find_elements(*self.bt_update_devca_locator)[1].click()
-        self.click(self.bt_update_devca_locator)
-        self.send_value(self.t_text_devca_locator,devca)
-        self.click(self.bt_save_devca_locator)
+        self.select_devca(devca_name)
+        self.click(loc.bt_update_devca_ele)
+        self.send_value(loc.t_text_devca_ele,update_txt)
+        self.click(loc.bt_save_devca_ele)
         update_devca_p = self.get_devca_p()
+        self.restting_devca()
         return update_devca_p
 
-    def remove_devca(self):
+    def remove_devca(self,devca_name):
         """
-        删除仪器分类信息
+        指定仪器分类删除
+        :param devca_name:仪器分类名称，查询条件
         :return:
         """
-        self.click(self.bt_remove_devca_locator)
-        self.click(self.bt_remove_y_devca_locator)
+        self.select_devca(devca_name)
+        self.click(loc.bt_remove_devca_ele)
+        self.click(loc.bt_remove_y_devca_ele)
         remove_devca_p = self.get_devca_p()
+        self.restting_devca()
         return remove_devca_p
 
 
@@ -109,7 +112,7 @@ class DeviceCategoryPage(BasePage):
         获取操作完成后的弹窗提示
         :return:
         """
-        devca_p = self.wait_element_visible(self.p_devca_locator).text
+        devca_p = self.wait_element_visible(loc.p_devca_ele).text
         return devca_p
 
     def wati_invisibility(self):
@@ -117,7 +120,7 @@ class DeviceCategoryPage(BasePage):
         等待页面操作完成的提示弹窗不可见
         :return:
         """
-        self.wati_element_invisibility(self.p_devca_locator)
-        return self
+        wait = self.wati_element_invisibility(loc.p_devca_ele)
+        return wait
 
 

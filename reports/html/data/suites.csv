@@ -1,14 +1,24 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Aug 23 00:01:09 CST 2023","Wed Aug 23 00:01:10 CST 2023","803","testcase","test_device_category","TestDeviceCategory","","","test_update_devca[test_info0]",""
-"passed","Wed Aug 23 00:01:06 CST 2023","Wed Aug 23 00:01:09 CST 2023","3332","testcase","test_device_category","TestDeviceCategory","","","test_save_devc[test_info0]","
-        新增仪器分类信息
+"passed","Thu Sep 14 00:17:57 CST 2023","Thu Sep 14 00:18:01 CST 2023","3825","testcase","test_device_category","TestDeviceCategory","","","删除仪器分类","
+        仪器分类删除
         :param login:fixture函数，返回driver对象
-        :param test_info: 仪器分类基本信息参数
         :return:
         "
-"passed","Wed Aug 23 00:01:09 CST 2023","Wed Aug 23 00:01:09 CST 2023","455","testcase","test_device_category","TestDeviceCategory","","","test_select_devca[test_info0]","
-        通过仪器名称，查询仪器分类信息（模糊匹配）
+"passed","Thu Sep 14 00:17:41 CST 2023","Thu Sep 14 00:17:54 CST 2023","13638","testcase","test_device_category","TestDeviceCategory","","","查询仪器分类","
+        通过仪器名称，查询仪器分类信息（模糊匹配）,并重置
         :param login: fixture函数，返回driver对象
         :param test_info: 仪器分类名称
+        :return:
+        "
+"passed","Thu Sep 14 00:17:37 CST 2023","Thu Sep 14 00:17:41 CST 2023","3905","testcase","test_device_category","TestDeviceCategory","","","新增仪器分类","
+        新增仪器分类信息
+        :param login:fixture函数，返回driver对象
+        :param test_info: 仪器分类基本信息参数，字典
+        :return:
+        "
+"passed","Thu Sep 14 00:17:54 CST 2023","Thu Sep 14 00:17:57 CST 2023","2844","testcase","test_device_category","TestDeviceCategory","","","编辑仪器分类","
+        仪器分类编辑
+        :param login:fixture函数，返回driver对象
+        :param test_info:仪器分类基本信息编辑，字典
         :return:
         "
