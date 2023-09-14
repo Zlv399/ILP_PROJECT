@@ -92,3 +92,4 @@ class TestLogin():
         with allure.step('获取首页登录用户信息'):
              user = IndexPage(browser).get_index_user_txt()
         assert test_info['expected'] in user
+        #123
