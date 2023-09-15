@@ -1,0 +1,59 @@
+仪器管理菜单:
+  type: xpath
+  value: //span[contains(text(),"仪器管理")]
+
+分类菜单:
+  type: xpath
+  value: //span[contains(text(),"仪器分类")]
+
+新增分类按钮:
+  type: xpath
+  value: //span[contains(text(),"新增")]
+
+分类名称输入框:
+  type: xpath
+  value: //*[@id="avue-view"]/div/div[2]/div/div[2]/div/form/div[2]/div[1]/div/div/div[1]/input
+
+分类排序输入框:
+  type: xpath
+  value: //*[@id="avue-view"]/div/div[2]/div/div[2]/div/form/div[2]/div[3]/div/div/div/div/input
+
+新增/编辑分类保存按钮:
+  type: xpath
+  value: //span[contains(text(),"保存")]
+
+页面弹窗提示:
+  type: xpath
+  value: //p[@class="el-message__content"]
+
+列表查询输入框:
+  type: xpath
+  value: //input[@placeholder="请输入 分类名称"]
+
+列表第一个分类名称:
+  type: xpath
+  value: '//span[@style="color: rgb(10, 103, 250); cursor: pointer;"]'
+
+列表查询按钮:
+  type: xpath
+  value: //span[contains(text(),"搜索")]
+
+列表重置按钮:
+  type: xpath
+  value: //span[contains(text(),"重置")]
+
+列表第一个分类编辑按钮:
+  type: xpath
+  value: /html/body/div[1]/div[1]/div[2]/div[2]/div[3]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td[6]/div/span[1]
+
+分类备注信息:
+  type: xpath
+  value: //textarea[@class="el-textarea__inner"]
+
+列表第一个分类删除按钮:
+  type: xpath
+  value: /html/body/div[1]/div[1]/div[2]/div[2]/div[3]/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td[6]/div/span[2]
+
+删除二次确认:
+  type: xpath
+  value: //span[contains(text(),"确定")]
