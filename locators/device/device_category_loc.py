@@ -43,4 +43,3 @@ class DeviceCategoryLocators:
     t_text_devca_ele = (By.XPATH,'//textarea[@class="el-textarea__inner"]')
     bt_remove_devca_ele = (By.XPATH,'//*[@id="avue-view"]/div/div/div/div[2]/div/form/div/div[4]/div[2]/table/tbody/tr[1]/td[6]/div/span[2]')
     bt_remove_y_devca_ele = (By.XPATH,'//span[contains(text(),"确定")]')
-    #1
