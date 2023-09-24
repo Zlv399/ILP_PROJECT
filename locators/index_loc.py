@@ -13,4 +13,4 @@ class IndexLocators:
     1、首页登录用户信息
     """
     # i：输入框  bt：按钮  t：文本属性 p:弹窗提示 ier:输入框异常提示
-    t_index_user_ele = (By.XPATH, '//*[@id="avue-view"]/div/div[1]/div[1]/div[2]/p/span')
+    t_index_user_ele = (By.XPATH, '//*[@id="avue-view"]/div/div/div[1]/div[1]/div[2]/p/span')

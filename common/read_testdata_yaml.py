@@ -28,8 +28,9 @@ class ReadYamlDataInfo():
             raise FileNotFoundError("%s 文件不存在！" % self.file_path)
         with open(self.file_path, encoding='utf-8') as f:
             self.textdata = f.read()
-            self.yamldata =  yaml.safe_load(self.textdata)
-
+            # self.yamldata = yaml.safe_load(f),在使用了read方法后不能直接解析文件对象f，因为read方法在调用后会将文件指针移动到文件末尾
+            # 文件指针已经在末尾位置，没有剩余的内容可供解析
+            self.yamldata = yaml.safe_load(self.textdata)
 
     def __getitem__(self, key):
         """获取yaml文件维护的测试数据"""
