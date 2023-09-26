@@ -12,16 +12,17 @@ import allure
 from page.device.device_category_page import DeviceCategoryPage
 from common.read_testdata_yaml import ReadYamlDataInfo
 
-test_info = ReadYamlDataInfo('device_data/device_category')
-replace_data = {
-    'nowtime': time.strftime('%y%m%d-%H:%M:%S')
-}
-replaces = test_info.yaml_replace(replace_data)
 
 @allure.feature('仪器模块')
 @allure.story('仪器分类')
 class TestDeviceCategory:
 
+    #读取测试用例的参数，并将动态参数的占位符替换
+    test_info = ReadYamlDataInfo('device_data/device_category')
+    replace_data = {
+        'nowtime': time.strftime('%y%m%d-%H:%M:%S')
+    }
+    replaces = test_info.yaml_replace(replace_data)
 
     @allure.title('新增仪器分类')
     @pytest.mark.parametrize('test_info',replaces['device_category'])

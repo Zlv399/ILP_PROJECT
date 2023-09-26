@@ -37,8 +37,6 @@ class ReadYamlDataInfo():
         #通过字典键，获取yaml文件中，字典的值
         data  = self.yamldata.get(key)
         if data:
-            #以元组方式返回
-            # return tuple(data.values())
             #返回格式根据yaml文件维护的格式决定
             return data
         raise ArithmeticError("{}中不存在关键字：{}".format(self.file_name, key))

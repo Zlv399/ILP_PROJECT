@@ -14,12 +14,14 @@ from page.login_page import LoginPage
 from page.index_page import IndexPage
 from common.read_testdata_yaml import ReadYamlDataInfo
 
-test_data = ReadYamlDataInfo('login_data')
 
 
 @allure.feature('登录模块')
 @allure.story('登录测试')
 class TestLogin():
+
+    #读取测试数据
+    test_data = ReadYamlDataInfo('login_data')
 
     @allure.title('账号为空登录')
     @pytest.mark.run(order=1)
