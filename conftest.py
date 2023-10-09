@@ -64,3 +64,14 @@ def clear_screenshots():
             file_path = os.path.join(IMAGE_PATH, file)
             if os.path.isfile(file_path):
                 os.remove(file_path)
+
+def pytest_collection_modifyitems(items):
+    """
+    解决控制台输出用例id中文编码错误问题
+    :param items:
+    :return:
+    """
+    for item in items:
+        item.name = item.name.encode("utf-8").decode("unicode_escape")
+        # print(item.nodeid)
+        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")

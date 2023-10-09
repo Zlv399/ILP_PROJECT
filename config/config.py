@@ -11,7 +11,7 @@ import os
 
 
 # 隐式等待时间
-IMPLICTLY_WAIT_TIMEOUT = 10
+IMPLICTLY_WAIT_TIMEOUT = 5
 
 # host
 TEST_HOST = "http://192.168.32.70:2888/"

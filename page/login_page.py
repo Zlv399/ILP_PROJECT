@@ -45,33 +45,33 @@ class LoginPage(BasePage):
         self.send_value(loc.i_pwd_ele,pwd)
         self.click(loc.bt_login_ele)
 
-    def get_input_user_error(self):
-        """
-        获取用户名输入框的报错信息
-        :return:
-        """
-        user_err = self.wait_element_visible(loc.ier_user_ele).text
-        return user_err
-        # if user_err.is_displayed():
-        #     return user_err.text
-        # elif pwd_err.is_displayed():
-        #     return pwd_err.text
-        # user_err = self.wati_element_visible(self.user_err_locator)
-        # pwd_err = self.wati_element_visible(self.pwd_err_locator)
-
-    def get_input_pwd_error(self):
-        """
-        获取密码输入框的报错信息
-        :return:
-        """
-        # pwd_err = self.find(self.pwd_err_locator).text
-        pwd_err = self.wait_element_visible(loc.ier_pwd_ele).text
-        return pwd_err
-
-    def get_prompt_error(self):
-        """
-        获取页面弹窗提示的错误信息
-        :return:
-        """
-        pormpt_err = self.wait_element_visible(loc.p_login_err_ele).text
-        return pormpt_err
+    # def get_input_user_error(self):
+    #     """
+    #     获取用户名输入框的报错信息
+    #     :return:
+    #     """
+    #     user_err = self.wait_element_visible(loc.ier_user_ele).text
+    #     return user_err
+    #     # if user_err.is_displayed():
+    #     #     return user_err.text
+    #     # elif pwd_err.is_displayed():
+    #     #     return pwd_err.text
+    #     # user_err = self.wati_element_visible(self.user_err_locator)
+    #     # pwd_err = self.wati_element_visible(self.pwd_err_locator)
+    #
+    # def get_input_pwd_error(self):
+    #     """
+    #     获取密码输入框的报错信息
+    #     :return:
+    #     """
+    #     # pwd_err = self.find(self.pwd_err_locator).text
+    #     pwd_err = self.wait_element_visible(loc.ier_pwd_ele).text
+    #     return pwd_err
+    #
+    # def get_prompt_error(self):
+    #     """
+    #     获取页面弹窗提示的错误信息
+    #     :return:
+    #     """
+    #     pormpt_err = self.wait_element_visible(loc.p_login_err_ele).text
+    #     return pormpt_err
