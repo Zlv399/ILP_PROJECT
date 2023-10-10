@@ -11,10 +11,9 @@ import pytest,allure
 import time
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
-from data.login_data import cases_success
 from config.config import IMPLICTLY_WAIT_TIMEOUT,IMAGE_PATH
 from page.login_page import LoginPage
-
+from common.read_testdata_yaml import ReadYamlDataInfo
 
 driver = None
 @pytest.fixture(scope='class')
@@ -49,8 +48,9 @@ def login(browser):
     :param browser:driver对象
     :return:driver对象
     """
+    user = ReadYamlDataInfo('login_data')
     login = LoginPage(browser)
-    login.get_login().login(cases_success[0]['username'],cases_success[0]['password'])
+    login.get_login().login(user['login']['username'],user['login']['password'])
     yield browser
 
 

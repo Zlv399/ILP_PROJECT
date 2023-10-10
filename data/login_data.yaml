@@ -45,4 +45,6 @@ cases_login:
     password: Fyx10086
     expected: True
 
-
+login:
+  username: fyx
+  password: Fyx10086
