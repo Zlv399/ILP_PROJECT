@@ -1,24 +1,31 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Sep 14 00:17:57 CST 2023","Thu Sep 14 00:18:01 CST 2023","3825","testcase","test_device_category","TestDeviceCategory","","","删除仪器分类","
-        仪器分类删除
-        :param login:fixture函数，返回driver对象
+"passed","Tue Oct 10 23:59:56 CST 2023","Tue Oct 10 23:59:59 CST 2023","2402","testcase","test_login","TestLogin","","","账号密码正确登录登录","
+        包含所有情况参数化登录
+        :param test_info: 登录参数
+        :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Thu Sep 14 00:17:41 CST 2023","Thu Sep 14 00:17:54 CST 2023","13638","testcase","test_device_category","TestDeviceCategory","","","查询仪器分类","
-        通过仪器名称，查询仪器分类信息（模糊匹配）,并重置
-        :param login: fixture函数，返回driver对象
-        :param test_info: 仪器分类名称
+"failed","Tue Oct 10 23:59:29 CST 2023","Tue Oct 10 23:59:37 CST 2023","7783","testcase","test_login","TestLogin","","","密码错误登录","
+        包含所有情况参数化登录
+        :param test_info: 登录参数
+        :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Thu Sep 14 00:17:37 CST 2023","Thu Sep 14 00:17:41 CST 2023","3905","testcase","test_device_category","TestDeviceCategory","","","新增仪器分类","
-        新增仪器分类信息
-        :param login:fixture函数，返回driver对象
-        :param test_info: 仪器分类基本信息参数，字典
+"passed","Tue Oct 10 23:59:50 CST 2023","Tue Oct 10 23:59:56 CST 2023","6315","testcase","test_login","TestLogin","","","密码为空登录","
+        包含所有情况参数化登录
+        :param test_info: 登录参数
+        :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Thu Sep 14 00:17:54 CST 2023","Thu Sep 14 00:17:57 CST 2023","2844","testcase","test_device_category","TestDeviceCategory","","","编辑仪器分类","
-        仪器分类编辑
-        :param login:fixture函数，返回driver对象
-        :param test_info:仪器分类基本信息编辑，字典
+"passed","Tue Oct 10 23:59:43 CST 2023","Tue Oct 10 23:59:50 CST 2023","6413","testcase","test_login","TestLogin","","","账号为空登录","
+        包含所有情况参数化登录
+        :param test_info: 登录参数
+        :param browser: fixture函数，返回driver对象
+        :return:
+        "
+"passed","Tue Oct 10 23:59:37 CST 2023","Tue Oct 10 23:59:43 CST 2023","6481","testcase","test_login","TestLogin","","","账号错误登录","
+        包含所有情况参数化登录
+        :param test_info: 登录参数
+        :param browser: fixture函数，返回driver对象
         :return:
         "
