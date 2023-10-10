@@ -36,7 +36,7 @@ cases_login:
     username: ''
     password: Fyx10086
     expected: False
-  - casenamee: 密码为空登录
+  - casename: 密码为空登录
     username: fyx
     password: ''
     expected: False

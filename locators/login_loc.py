@@ -22,6 +22,7 @@ class LoginLocators:
     i_user_ele = (By.XPATH,'//input[@autocomplete="off"][@placeholder="请输入账号"]')
     i_pwd_ele = (By.XPATH,'//input[@autocomplete="off"][@type="password"]')
     bt_login_ele = (By.XPATH,'//button[@type="button"][@class="el-button login-submit el-button--primary el-button--small"]')
+    t_index_user_ele = (By.XPATH, '//*[@id="avue-view"]/div/div/div[1]/div[1]/div[2]/p/span')
     # ier_user_ele = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[2]/div/div[2]')
     # ier_pwd_ele = (By.XPATH,'/html/body/div[1]/div[1]/div[2]/div[2]/div/form/div[3]/div/div[2]')
     # p_login_err_ele = (By.XPATH,'//p[@class="el-message__content"]')

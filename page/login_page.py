@@ -45,6 +45,16 @@ class LoginPage(BasePage):
         self.send_value(loc.i_pwd_ele,pwd)
         self.click(loc.bt_login_ele)
 
+    def get_index_user_txt(self):
+        """
+        获取首页登录用户信息
+        :return: 返回首页用户登录信息
+        """
+        try:
+            self.wait_element_visible(loc.t_index_user_ele,5)
+            return True
+        except Exception:
+            return False
     # def get_input_user_error(self):
     #     """
     #     获取用户名输入框的报错信息

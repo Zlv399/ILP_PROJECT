@@ -24,13 +24,13 @@ class IndexPage(BasePage):
     #     index_user = self.wait_element_visible(loc.t_index_user_ele).text
     #     return index_user
 
-    def get_index_user_txt(self):
-        """
-        获取首页登录用户信息
-        :return: 返回首页用户登录信息
-        """
-        try:
-            self.wait_element_visible(loc.t_index_user_ele,5)
-            return True
-        except Exception:
-            return False
+    # def get_index_user_txt(self):
+    #     """
+    #     获取首页登录用户信息
+    #     :return: 返回首页用户登录信息
+    #     """
+    #     try:
+    #         self.wait_element_visible(loc.t_index_user_ele,5)
+    #         return True
+    #     except Exception:
+    #         return False

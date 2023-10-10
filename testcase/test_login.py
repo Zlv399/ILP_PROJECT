@@ -11,7 +11,6 @@ import time
 import pytest
 import allure
 from page.login_page import LoginPage
-from page.index_page import IndexPage
 from common.read_testdata_yaml import ReadYamlDataInfo
 
 
@@ -111,5 +110,5 @@ class TestLogin():
         with allure.step('输入账号密码，操作登录'):
             login.get_login().login(test_info['username'],test_info['password'])
         with allure.step('获取登录结果'):
-            boolean = IndexPage(browser).get_index_user_txt()
+            boolean = login.get_index_user_txt()
         assert test_info['expected'] == boolean
