@@ -27,23 +27,23 @@ cases_login:
   - casename: 密码错误登录
     username: fyx
     password: Fyx100861
-    expected: False
+    expected: 登录失败
   - casename: 账号错误登录
     username: fyxd
     password: Fyx10086
-    expected: False
+    expected: 登录失败
   - casename: 账号为空登录
     username: ''
     password: Fyx10086
-    expected: False
+    expected: 登录失败
   - casename: 密码为空登录
     username: fyx
     password: ''
-    expected: False
-  - casename: 账号密码正确登录登录
+    expected: 登录失败
+  - casename: 账号密码正确登录
     username: fyx
     password: Fyx10086
-    expected: True
+    expected: 登录成功
 
 login:
   username: fyx

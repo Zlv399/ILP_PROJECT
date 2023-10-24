@@ -52,9 +52,9 @@ class LoginPage(BasePage):
         """
         try:
             self.wait_element_visible(loc.t_index_user_ele,5)
-            return True
+            return '登录成功'
         except Exception:
-            return False
+            return '登录失败'
     # def get_input_user_error(self):
     #     """
     #     获取用户名输入框的报错信息
