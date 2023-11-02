@@ -1,29 +1,52 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Oct 10 23:59:56 CST 2023","Tue Oct 10 23:59:59 CST 2023","2402","testcase","test_login","TestLogin","","","账号密码正确登录登录","
+"passed","Wed Nov 01 07:43:21 CST 2023","Wed Nov 01 07:43:28 CST 2023","7024","testcase","test_login","TestLogin","","","密码错误登录","
         包含所有情况参数化登录
         :param test_info: 登录参数
         :param browser: fixture函数，返回driver对象
         :return:
         "
-"failed","Tue Oct 10 23:59:29 CST 2023","Tue Oct 10 23:59:37 CST 2023","7783","testcase","test_login","TestLogin","","","密码错误登录","
+"passed","Wed Nov 01 07:43:40 CST 2023","Wed Nov 01 07:43:47 CST 2023","6164","testcase","test_login","TestLogin","","","密码为空登录","
         包含所有情况参数化登录
         :param test_info: 登录参数
         :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Tue Oct 10 23:59:50 CST 2023","Tue Oct 10 23:59:56 CST 2023","6315","testcase","test_login","TestLogin","","","密码为空登录","
+"passed","Wed Nov 01 07:43:47 CST 2023","Wed Nov 01 07:43:48 CST 2023","1824","testcase","test_login","TestLogin","","","账号密码正确登录","
         包含所有情况参数化登录
         :param test_info: 登录参数
         :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Tue Oct 10 23:59:43 CST 2023","Tue Oct 10 23:59:50 CST 2023","6413","testcase","test_login","TestLogin","","","账号为空登录","
+"passed","Wed Nov 01 07:43:11 CST 2023","Wed Nov 01 07:43:11 CST 2023","471","testcase","test_device_category","TestDeviceCategory","","","查询仪器分类","
+        通过仪器名称，查询仪器分类信息（模糊匹配）,并重置
+        :param login: fixture函数，返回driver对象
+        :param test_info: 仪器分类名称
+        :return:
+        "
+"passed","Wed Nov 01 07:43:28 CST 2023","Wed Nov 01 07:43:34 CST 2023","6262","testcase","test_login","TestLogin","","","账号错误登录","
         包含所有情况参数化登录
         :param test_info: 登录参数
         :param browser: fixture函数，返回driver对象
         :return:
         "
-"passed","Tue Oct 10 23:59:37 CST 2023","Tue Oct 10 23:59:43 CST 2023","6481","testcase","test_login","TestLogin","","","账号错误登录","
+"passed","Wed Nov 01 07:43:11 CST 2023","Wed Nov 01 07:43:13 CST 2023","1703","testcase","test_device_category","TestDeviceCategory","","","编辑仪器分类","
+        仪器分类编辑
+        :param login:fixture函数，返回driver对象
+        :param test_info:仪器分类基本信息编辑，字典
+        :return:
+        "
+"passed","Wed Nov 01 07:43:08 CST 2023","Wed Nov 01 07:43:11 CST 2023","3191","testcase","test_device_category","TestDeviceCategory","","","新增仪器分类","
+        新增仪器分类信息
+        :param login:fixture函数，返回driver对象
+        :param test_info: 仪器分类基本信息参数，字典
+        :return:
+        "
+"passed","Wed Nov 01 07:43:13 CST 2023","Wed Nov 01 07:43:18 CST 2023","4464","testcase","test_device_category","TestDeviceCategory","","","删除仪器分类","
+        仪器分类删除
+        :param login:fixture函数，返回driver对象
+        :return:
+        "
+"passed","Wed Nov 01 07:43:34 CST 2023","Wed Nov 01 07:43:40 CST 2023","6206","testcase","test_login","TestLogin","","","账号为空登录","
         包含所有情况参数化登录
         :param test_info: 登录参数
         :param browser: fixture函数，返回driver对象

@@ -28,18 +28,18 @@ def browser():
     :return:
     """
     global driver
-    if driver == None:
+    # if driver == None:
     #解决ssl协议握手报错ERROR:ssl_client_socket_impl.cc(962)] handshake failed；returned -1, SSL error code 1
-        chrome_options = Options()
-        chrome_options.add_argument('--disable-extensions')
-        chrome_options.add_experimental_option('excludeSwitches', ['ignore-certificate-errors'])
+    chrome_options = Options()
+    chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_experimental_option('excludeSwitches', ['ignore-certificate-errors'])
     #将窗口最大化作为chrome的启动选项，即启动浏览器时就是最大化
-        chrome_options.add_argument('--start-maximized')
-        driver = webdriver.Chrome(options=chrome_options)
-        driver.implicitly_wait(IMPLICTLY_WAIT_TIMEOUT)
+    chrome_options.add_argument('--start-maximized')
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.implicitly_wait(IMPLICTLY_WAIT_TIMEOUT)
     # driver.maximize_window()
-        yield driver
-        driver.quit()
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='class')
 def login(browser):
