@@ -89,7 +89,6 @@ def pytest_runtest_makereport(item):
     outcome = yield
     # 从钩子方法的调用结果中获取测试报告
     rep = outcome.get_result()
-    # print(rep,'调试')
     # rep.when表示测试步骤，仅仅获取用例call 执行结果是失败的情况, 不包含 setup/teardown
     if rep.when == "call" and rep.failed:
         mode = "a" if os.path.exists("failures") else "w"

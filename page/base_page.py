@@ -191,14 +191,12 @@ class BasePage(object):
         :return:
         """
         try:
-            # send_value = self.driver.find_element(*locator)
-            # send_value = self.find(locator)
-            # send_value = self.wait_element_visible(locator)
-            # send_value = self.wait_element_clickable(locator)
             send_value =self.find(locator)
             #解决元素点击被拦截的异常ElementClickInterceptedException
             self.driver.execute_script("arguments[0].click();", send_value)
             send_value.clear()
+            #解决clear()方法清空输入框内容后，没有触发相关JavaScript事件，导致输入框的实际值可能并没有被正确更新的问题
+            self.driver.execute_script("arguments[0].dispatchEvent(new Event('input', { bubbles: true }));", send_value)
             send_value.send_keys(txt)
         except Exception as err:
             #可以加上日志处理

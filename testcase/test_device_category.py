@@ -69,6 +69,7 @@ class TestDeviceCategory:
         """
         devca = DeviceCategoryPage(login)
         with allure.step('通过仪器分类名称搜索，并编辑第一条分类结果的备注'):
+            devca.wati_invisibility()
             update_devca_p = devca.update_devca(test_info['select_devca'],test_info['update_devca_text'])
         with allure.step('编辑完成后重置列表'):
             devca.restting_devca()
@@ -88,8 +89,7 @@ class TestDeviceCategory:
             #因为客户端时间和服务器时间存在差异所有用等待不可见会出现ssl握手错误，影响元素等待不可见方法，使用强制等待
             # time.sleep(3)
             devca.wati_invisibility()
-        # time.sleep(4)
         with allure.step('通过分类名称搜索分类，并删除第一条分类结果'):
             remove_devca = devca.remove_devca(test_info['select_devca'])
-        assert remove_devca == test_info['expected']
+        assert test_info['expected'] == remove_devca
 
