@@ -84,7 +84,6 @@ class TestDeviceCategory:
         :param login:fixture函数，返回driver对象
         :return:
         """
-        'ahhaha'
         devca = DeviceCategoryPage(login)
         with allure.step('等待上一个操作完成后的提示语消失'):
             #因为客户端时间和服务器时间存在差异所有用等待不可见会出现ssl握手错误，影响元素等待不可见方法，使用强制等待
